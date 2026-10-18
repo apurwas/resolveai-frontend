@@ -1121,7 +1121,7 @@ export default function Home() {
             <div className="panel-body">
               <div className="field">
                 <label className="field-label">
-                  Customer ID
+                  Customer ID (required for customer-specific cases)
                 </label>
 
                 <input
@@ -1153,11 +1153,7 @@ export default function Home() {
                 <button
                   className="primary-button"
                   onClick={analyzeCase}
-                  disabled={
-                    loading ||
-                    !customerId ||
-                    !customerMessage
-                  }
+                  disabled={loading || !customerMessage.trim()}
                 >
                   {loading
                     ? "Investigating..."
